@@ -1,0 +1,43 @@
+<% provide(:title, @user.name) %>
+<head>
+	<style type="text/css">
+	body {
+		color: black;
+	}
+	span {
+		color: red;
+		font-size: 23px;
+	}
+	</style>
+</head>
+<body style=background-size:cover; background="https://farm6.staticflickr.com/5169/5347908633_21c9b13b9b_b.jpg">
+<div align='center'class="row">
+  <aside class="span4">
+    <section>
+      <%= gravatar_for @user %>
+	  <h1 style="color:red">How are you today?&nbsp;&nbsp;<%= @user.name %></h1>
+      
+      
+  	</section>
+</div>
+<hr>
+
+<h1 align='left'>Your books are shown below:</h1>
+<div class="span8">
+    <% if @user.microposts.any? %>
+      <h3>Books (<%= @user.microposts.count %>)</h3>
+      <ol class="microposts">
+        <%= render @microposts %>
+      </ol>
+      <%= will_paginate @microposts %>
+    <% end %>
+  </div>
+<hr>
+	<%= link_to "Sign out", signout_path, method: "delete" %>
+	
+
+
+  
+  </aside>
+
+</body>

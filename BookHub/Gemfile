@@ -15,8 +15,8 @@ gem 'coffee-rails', '~> 4.0.0'
 # gem 'therubyracer',  platforms: :ruby
 # Add bcrypt -- most advanced hash func
 gem 'bcrypt-ruby', '3.1.5'
-
-
+#paginate
+gem 'will_paginate', '3.0.7'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

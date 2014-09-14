@@ -1,2 +1,38 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<% provide(:title, 'Sign up') %>
+<head>
+
+</head>
+<body style=background-size:cover; background="https://farm4.staticflickr.com/3607/3585322663_d96dfd25e1_z.jpg?zz=1">
+<h1 align='center'>Sign up page</h1>
+
+<div align='center'class="row">
+  <div class="span6 offset3">
+
+    <%= form_for(@user) do |f| %>
+	  <%= render 'shared/error_messages', object: f.object %>
+	  <p>
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+	  </p>
+	  <p>
+      <%= f.label :email %><br>
+      <%= f.text_field :email %>
+	  </p>
+	  <p>
+      <%= f.label :password %><br>
+      <%= f.password_field :password %>
+	  </p>
+	  <p>
+      <%= f.label :password_confirmation, "Confirmation" %><br>
+      <%= f.password_field :password_confirmation %>
+	  </p>
+	  <p>
+	  <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
+	  </p>
+	  <p>
+      <%=link_to 'Back', signin_path %>
+      </p>
+    <% end %>
+  </div>
+</div
+</body>

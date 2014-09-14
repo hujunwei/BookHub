@@ -1,0 +1,24 @@
+<% provide(:title, "Sign in") %>
+<head>
+	
+</head>
+<body style=background-size:cover; background="https://farm9.staticflickr.com/8471/8139011586_d9dfb14d84_b.jpg">
+
+<h1 align='center'>Welcome to BookHub!</h1>
+<h3 align='center'>Please sign in</h3>
+
+<div class="row"align='center'>
+  <div class="span6 offset3">
+    <%= form_for(:session, url: sessions_path) do |f| %>
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+
+      <%= f.submit "Sign in", class: "btn btn-large btn-primary" %>
+    <% end %>
+    <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+  </div>
+</div>
+</body>
