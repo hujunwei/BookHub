@@ -1,6 +1,6 @@
-<li>
-  <span class="content"><%= micropost.content %></span>
-  <span class="timestamp">
-    Added <%= time_ago_in_words(micropost.created_at) %> ago.
+<li align='left'>
+  <span class="content"style="color:red">《<%= micropost.content %>》</span>
+  <span class="timestamp"style="font-size:15px;color:blue">
+    (Added <%= time_ago_in_words(micropost.created_at) %> ago.)
   </span>
 </li>

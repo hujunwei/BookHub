@@ -2,11 +2,11 @@
   <%= gravatar_for current_user %>
 </a>
 <h1>
-  <%= current_user.name %>
+  <%= current_user.name %>, you have<span>
+  	<%= pluralize(current_user.microposts.count, "Books") %>
+	</span><span>
+  <%= link_to "view books", current_user %> 
+</span>
 </h1>
-<span>
-  <%= link_to "view my profile", current_user %>
-</span>
-<span>
-  <%= pluralize(current_user.microposts.count, "micropost") %>
-</span>
+<h1>Add you books below or <%= link_to "sign out", signout_path, method: "delete" %> </h1>
+

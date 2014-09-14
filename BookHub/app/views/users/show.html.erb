@@ -11,7 +11,7 @@
 	</style>
 </head>
 <body style=background-size:cover; background="https://farm6.staticflickr.com/5169/5347908633_21c9b13b9b_b.jpg">
-<div align='center'class="row">
+<div align='left'class="row">
   <aside class="span4">
     <section>
       <%= gravatar_for @user %>
@@ -22,10 +22,9 @@
 </div>
 <hr>
 
-<h1 align='left'>Your books are shown below:</h1>
 <div class="span8">
     <% if @user.microposts.any? %>
-      <h3>Books (<%= @user.microposts.count %>)</h3>
+      <h3 align='left'>Books (<%= @user.microposts.count %>)</h3>
       <ol class="microposts">
         <%= render @microposts %>
       </ol>
@@ -33,7 +32,8 @@
     <% end %>
   </div>
 <hr>
-	<%= link_to "Sign out", signout_path, method: "delete" %>
+	<%= link_to "Sign out", signout_path, method: "delete" %> |
+  <%= link_to "Add books", root_url%>
 	
 
 
